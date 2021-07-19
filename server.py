@@ -26,7 +26,6 @@ def check_name(name):
     return render_template("guess.html", year_old=age, sex=sex, name=name)
 
 
-
 @app.route("/blog")
 def blog():
     # blog_url="https://www.npoint.io/docs/5abcca6f4e39b4955965"
@@ -49,7 +48,6 @@ def blog():
     ]
 
     return render_template("blog.html", all_posts=all_posts)
-    # todo check api work
 
 
 if __name__ == "__main__":

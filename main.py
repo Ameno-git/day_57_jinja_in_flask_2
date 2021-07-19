@@ -4,8 +4,8 @@ from post import Post
 
 app = Flask(__name__)
 NPOINT_API = "https://www.npoint.io/docs/5abcca6f4e39b4955965"
+# no data here ^^  ;( need to create another json but i'm lazy
 
-# todo del next dictionary and check requests
 all_posts = [
     {
         "id": 1,
@@ -35,6 +35,7 @@ for post in all_posts:
     post_obj = Post(post_id=post["id"], title=post["title"], subtitle=post["subtitle"], body=post["body"])
     post_list.append(post_obj)
 
+
 @app.route('/')
 def home():
     return render_template("index.html", post_list=post_list)
@@ -42,7 +43,7 @@ def home():
 
 @app.route('/post/<int:blog_id>')
 def blog(blog_id):
-    return render_template("post.html", post=post_list[blog_id-1])
+    return render_template("post.html", post=post_list[blog_id - 1])
 
 
 if __name__ == "__main__":
